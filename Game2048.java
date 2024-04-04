@@ -296,7 +296,7 @@ public class Game2048 extends JPanel {
       }
     }
     g.setFont(new Font(FONT_NAME, Font.PLAIN, 18));
-    g.drawString("Điểm: " + myScore, 200, 365);
+    g.drawString("Điểm: " + myScore, 200, 350);
 
   }
 
