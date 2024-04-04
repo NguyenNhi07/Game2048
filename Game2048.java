@@ -13,6 +13,8 @@ public class Game2048 extends JPanel {
   private static final int TILE_SIZE = 64;
   private static final int TILES_MARGIN = 16;
 
+  private int totalMoves;
+
   private Tile[] myTiles;
   boolean myWin = false;
   boolean myLose = false;
@@ -55,6 +57,15 @@ public class Game2048 extends JPanel {
       }
     });
     resetGame();
+    totalMoves = 0;
+  }
+
+  private void incrementMoves() {
+    totalMoves++;
+  }
+
+  public int getTotalMoves() {
+    return totalMoves;
   }
 
   public void resetGame() {
@@ -297,6 +308,9 @@ public class Game2048 extends JPanel {
     }
     g.setFont(new Font(FONT_NAME, Font.PLAIN, 18));
     g.drawString("Điểm: " + myScore, 200, 350);
+
+    g.setFont(new Font(FONT_NAME, Font.PLAIN, 18));
+    g.drawString("Số bước đi: " + totalMoves, 20, 350);
 
   }
 
